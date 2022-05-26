@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native'
 import * as yup from 'yup'
 import { AuthContext } from '../context/AuthContext'
@@ -9,7 +9,8 @@ import Icon from '../components/Icon'
 import { Icons } from '../resource/Icons'
 import Line from '../components/Line'
 
-const LandingScreen = (navigation) => {
+const LandingScreen = navigation => {
+  const { googleLogin, facebookLogin } = useContext(AuthContext)
   return (
     <View style={styles.root}>
       <View style={styles.top}>
@@ -43,14 +44,14 @@ const LandingScreen = (navigation) => {
           flexDirection: 'row',
           justifyContent: 'space-evenly',
         }}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => googleLogin()}>
           <Icon
             style={styles.icon}
             source={Icons.google}
             resizeMode="contain"
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => facebookLogin()}>
           <Icon
             style={styles.icon}
             source={Icons.facebook}
