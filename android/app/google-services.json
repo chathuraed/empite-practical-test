@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "413275716476",
+    "project_id": "simple-auth-app-d782e",
+    "storage_bucket": "simple-auth-app-d782e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413275716476:android:2f7e5a72cb1cf16d5dc2f9",
+        "android_client_info": {
+          "package_name": "com.empitepracticaltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413275716476-23urdv513830718qm7hk99ssj2l3gsu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOYG49dRNvH1o_fWGLBd6qLxyfXl7eJ74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413275716476-23urdv513830718qm7hk99ssj2l3gsu8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "413275716476-kvc376meefbumdnkd0hjaj59o2r3p1pt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.EmpitePracticalTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
