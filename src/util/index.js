@@ -8,7 +8,6 @@ import {
 
 import Snackbar from 'react-native-snackbar'
 
-import RNLocation from 'react-native-location'
 import { Colors } from '../styles'
 
 export function hexToRgb(hexValue, alpha) {
@@ -58,52 +57,6 @@ export async function requestLocationPermissions() {
   } catch (err) {
     console.warn(err)
     return false
-  }
-}
-
-export async function permissionHandle() {
-  console.log('here')
-  let permission = await RN.checkPermission({
-    ios: 'whenInUse', // or 'always'
-    android: {
-      detail: 'coarse', // or 'fine'
-    },
-  })
-  console.log('here2')
-  console.log(permission)
-  let location
-
-  if (!permission) {
-    console.log('permission', !permission)
-    permission = await RNLocation.requestPermission({
-      ios: 'whenInUse',
-      android: {
-        detail: 'coarse',
-        rationale: {
-          title: 'We need to access your location',
-          message: 'We use your location to show where you are on the map',
-          buttonPositive: 'OK',
-          buttonNegative: 'Cancel',
-        },
-      },
-    })
-    console.log(permission)
-    location = await RNLocation.getLatestLocation({ timeout: 100 })
-    console.log(
-      location,
-      location.longitude,
-      location.latitude,
-      location.timestamp
-    )
-  } else {
-    console.log('Here 7')
-    location = await RNLocation.getLatestLocation({ timeout: 100 })
-    console.log(
-      location,
-      location.longitude,
-      location.latitude,
-      location.timestamp
-    )
   }
 }
 

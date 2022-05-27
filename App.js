@@ -9,6 +9,12 @@ enableLatestRenderer()
 import RootNavigation from './src/navigation'
 import { Env } from './src/constants'
 
+// await GoogleSignin.configure({
+//   iosClientId: '#id.apps.googleusercontent.com',
+//   webClientId: '#id.apps.googleusercontent.com',
+//   offlineAccess: false
+// });
+
 const App = () => {
   React.useEffect(() => {
     GoogleSignin.configure({

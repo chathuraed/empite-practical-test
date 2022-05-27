@@ -4,12 +4,13 @@ import Logo from '../../assets/logo.png'
 import { ContainedButton } from '../components/Buttons'
 import Input from '../components/Input'
 
-import { Formik, Field } from 'formik'
+import { Formik } from 'formik'
 import * as yup from 'yup'
 import { AuthContext } from '../context/AuthContext'
 
 const LoginScreen = () => {
   const { loading, login, register } = React.useContext(AuthContext)
+  
   const loginSchema = yup.object().shape({
     email: yup.string().email('Invalid email').required('Required'),
     password: yup.string().min(4, 'Too Short!').required('Required'),

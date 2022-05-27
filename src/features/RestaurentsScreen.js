@@ -20,18 +20,13 @@ const RestaurentsScreen = ({ navigation }) => {
 
   React.useEffect(() => {
     InteractionManager.runAfterInteractions(() => {
-      // 2: Component is done animating
-      // 3: Start fetching the team / or render the view
-      // this.props.dispatchTeamFetchStart();
       setIsReady(true)
     })
   }, [])
 
   const getUserLocation = async () => {
-    console.log("calling")
     Geolocation.getCurrentPosition(
       async position => {
-        console.log(position)
         setUserCoords(position.coords)
         mapRef.current.animateToRegion({
           latitude: position.coords.latitude,
@@ -39,7 +34,6 @@ const RestaurentsScreen = ({ navigation }) => {
         })
       },
       async error => {
-        // See error code charts below.
         console.log('Geolocation Error' + error.code, error.message)
       },
       { enableHighAccuracy: true, timeout: 15000 }

@@ -24,7 +24,6 @@
     "react-native": "0.68.2",
     "react-native-config": "^1.4.5",
     "react-native-fbsdk-next": "^8.0.5",
-    "react-native-location": "^2.5.0",
     "react-native-maps": "^0.31.1",
     "react-native-material-ripple": "^0.9.1",
     "react-native-permissions": "^3.3.1",

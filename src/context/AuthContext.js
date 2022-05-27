@@ -6,14 +6,12 @@ import { showSnackBar } from '../util'
 
 export const AuthContext = createContext()
 
-// Provider component that gives our components access to the authContext
 export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [user, setUser] = useState(null)
 
   React.useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged(user => {
-      console.log('user new', user)
       setUser(user)
     })
     return unsubscribe
