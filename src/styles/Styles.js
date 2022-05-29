@@ -74,7 +74,7 @@ const buttonStyles = StyleSheet.create({
       ios: 'HelveticaNeue-Bold',
       android: 'Roboto-Bold',
     }),
-    color: Colors.Text.SECONDARY_COLOR,
+    color: Colors.Text.PRIMARY_COLOR,
     fontSize: moderateScale(20),
   },
   buttonLabel: {
@@ -82,7 +82,7 @@ const buttonStyles = StyleSheet.create({
       ios: 'HelveticaNeue-Light',
       android: 'Roboto-Light',
     }),
-    color: Colors.Text.SECONDARY_COLOR,
+    color: Colors.Text.PRIMARY_COLOR,
     fontSize: moderateScale(18),
   },
   disableLabel: {

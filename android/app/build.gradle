@@ -1,6 +1,6 @@
 apply plugin: "com.android.application"
-apply plugin: "com.google.gms.google-services"
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+apply plugin: "com.google.gms.google-services"
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -83,6 +83,11 @@ import org.apache.tools.ant.taskdefs.condition.Os
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
+
+project.ext.envConfigFiles = [
+  release: ".env.production",
+  dev: ".env.development",
+];
 
 apply from: "../../node_modules/react-native/react.gradle"
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
@@ -172,6 +177,13 @@ android {
                 }
             }
         }
+
+        // manifestPlaceholders = [
+        //     FACEBOOK_APP_ID: project.env.get("FACEBOOK_APP_ID"),
+        //     FB_LOGIN_PROTOCOL_SCHEME: project.env.get("FB_LOGIN_PROTOCOL_SCHEME"),
+        //     FACEBOOK_CLIENT_TOKEN: project.env.get("FACEBOOK_CLIENT_TOKEN"),
+        //     GOOGLE_MAP_API_KEY : project.env.get("GOOGLE_MAP_API_KEY")
+        // ]
     }
 
     if (isNewArchitectureEnabled()) {
@@ -230,6 +242,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('release.keystore')
+            storePassword 'android'
+            keyAlias 'androiddereleasekey'
+            keyPassword 'android'
+        }
     }
     buildTypes {
         debug {
@@ -238,7 +256,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

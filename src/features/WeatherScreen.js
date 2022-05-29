@@ -10,7 +10,9 @@ import { ContainedButton } from '../components/Buttons'
 const FlatListBasics = ({ data }) => {
   // return flatlist of weather info
 
-  if (data.length === 0) return null
+  if (data.length === 0) {
+    return null
+  }
   return (
     <>
       {Object.keys(data).map(key => {
@@ -75,10 +77,10 @@ const WeatherScreen = ({ navigation }) => {
   }
 
   React.useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      getLocation()
-    })
-    return unsubscribe
+    // const unsubscribe = navigation.addListener('focus', () => {
+    getLocation()
+    // })
+    // return unsubscribe
   }, [navigation])
 
   return (

@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
   React.useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged(user => {
       setUser(user)
+      setLoading(false)
     })
     return unsubscribe
   }, [])
@@ -76,8 +77,8 @@ export const AuthProvider = ({ children }) => {
           try {
             setLoading(true)
             const result = await LoginManager.logInWithPermissions([
-              "email",
-              "public_profile",
+              'email',
+              'public_profile',
             ])
 
             if (result.isCancelled) {

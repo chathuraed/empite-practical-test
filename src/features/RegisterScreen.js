@@ -10,9 +10,8 @@ import { AuthContext } from '../context/AuthContext'
 import { OutlinedButton } from '../components/Buttons/src/OutlinedButton'
 import { Spacing } from '../styles'
 
-const LoginScreen = ({ navigation }) => {
-  console.log(navigation)
-  const { login } = React.useContext(AuthContext)
+const RegisterScreen = ({ navigation }) => {
+  const { register } = React.useContext(AuthContext)
 
   const loginSchema = yup.object().shape({
     email: yup.string().email('Invalid email').required('Required'),
@@ -29,7 +28,7 @@ const LoginScreen = ({ navigation }) => {
           password: '',
         }}
         validationSchema={loginSchema}
-        onSubmit={values => login(values.email, values.password)}>
+        onSubmit={values => register(values.email, values.password)}>
         {({ handleSubmit, isValid }) => (
           <>
             <Input name="email" placeholder="Email" autoCapitalize="none" />
@@ -38,15 +37,15 @@ const LoginScreen = ({ navigation }) => {
               disabled={!isValid}
               style={{ width: '100%' }}
               onPress={() => handleSubmit()}
-              label="LOGIN"
+              label="CREATE ACCOUNT"
             />
           </>
         )}
       </Formik>
       <TextButton
         style={{ marginTop: Spacing.x40 }}
-        onPress={() => navigation.navigate('Register')}
-        label="Don't have an account?"
+        onPress={() => navigation.navigate('Login')}
+        label="Already have an account?"
       />
     </View>
   )
@@ -54,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   root: {
-    padding: Spacing.x20,
+    padding: 20,
     alignItems: 'center',
   },
   logo: {
@@ -65,4 +64,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default LoginScreen
+export default RegisterScreen

@@ -1,41 +1,42 @@
 {
   "project_info": {
-    "project_number": "413275716476",
-    "project_id": "simple-auth-app-d782e",
-    "storage_bucket": "simple-auth-app-d782e.appspot.com"
+    "project_number": "295939299126",
+    "project_id": "empite-practical-test",
+    "storage_bucket": "empite-practical-test.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:413275716476:android:2f7e5a72cb1cf16d5dc2f9",
+        "mobilesdk_app_id": "1:295939299126:android:ca668ed88f32675691c597",
         "android_client_info": {
           "package_name": "com.empitepracticaltest"
         }
       },
       "oauth_client": [
         {
-          "client_id": "413275716476-23urdv513830718qm7hk99ssj2l3gsu8.apps.googleusercontent.com",
+          "client_id": "295939299126-bc28vfj4cf0nofdo7c1u6uvtfrtfoib4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.empitepracticaltest",
+            "certificate_hash": "0954fa931297c9c8261dfcacac886fe5e47a4eeb"
+          }
+        },
+        {
+          "client_id": "295939299126-fh1v3qqlll87v36loelkfdfm9snr9pr0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCOYG49dRNvH1o_fWGLBd6qLxyfXl7eJ74"
+          "current_key": "AIzaSyAlseG7NebwkSvEeJB93Kc44jdOJeHIkzs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "413275716476-23urdv513830718qm7hk99ssj2l3gsu8.apps.googleusercontent.com",
+              "client_id": "295939299126-fh1v3qqlll87v36loelkfdfm9snr9pr0.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "413275716476-kvc376meefbumdnkd0hjaj59o2r3p1pt.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "org.reactjs.native.example.EmpitePracticalTest"
-              }
             }
           ]
         }

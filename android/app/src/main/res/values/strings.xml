@@ -1,8 +1,3 @@
 <resources>
     <string name="app_name">EmpitePracticalTest</string>    
-    <string name="facebook_app_id">1395725750897069</string>
-    <string name="fb_login_protocol_scheme">fb1395725750897069</string>
-    <string name="facebook_client_token">6f4ddb60192b72bc2e2224765a6d8d00</string>
-
-
 </resources>

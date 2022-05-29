@@ -8,8 +8,10 @@ import { Images } from '../resource/Images'
 import Icon from '../components/Icon'
 import { Icons } from '../resource/Icons'
 import Line from '../components/Line'
+import { useNavigation } from '@react-navigation/native'
 
-const LandingScreen = navigation => {
+const LandingScreen = ({ navigation }) => {
+  console.log(navigation)
   const { googleLogin, facebookLogin } = useContext(AuthContext)
   return (
     <View style={styles.root}>
@@ -23,7 +25,7 @@ const LandingScreen = navigation => {
         />
         <OutlinedButton
           style={{ width: '100%' }}
-          onPress={() => {}}
+          onPress={() => navigation.navigate('Register')}
           label="CREATE AN ACCOUNT"
         />
       </View>
