@@ -70,3 +70,18 @@ export function showSnackBar(
     duration: Snackbar.LENGTH_LONG,
   })
 }
+
+export function getIsDay() {
+  const hours = new Date().getHours()
+  return hours > 6 && hours < 20
+}
+
+export function kelvinToCelcius(value) {
+  if (Number.isFinite(value)) {
+    // Checking if kelvin is a number.
+    const KELVIN_CELSIUS_DIFF = 273.15 // maybe unnecessary here, but it is good practice to avoid magic numbers.
+    let celsius = value - KELVIN_CELSIUS_DIFF
+    let cel = celsius.toFixed(0) + ' °C'
+    return cel // could also be just return kelvin - KELVIN_CELSIUS_DIFF;
+  }
+}
