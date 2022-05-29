@@ -22,6 +22,11 @@ const genericStyles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  rowJustify: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
   marginTop4: {
     marginTop: Spacing.x4,
   },

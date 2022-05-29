@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Feather from 'react-native-vector-icons/Feather'
 
 import WeatherScreen from '../features/WeatherScreen'
-import RestaurentsScreen from '../features/RestaurentsScreen'
+import RestaurantsScreen from '../features/RestaurantsScreen'
 
 const Tab = createBottomTabNavigator()
 
@@ -23,8 +23,8 @@ const DashboardNavigation = () => {
         }}
       />
       <Tab.Screen
-        name="Restaurents"
-        component={RestaurentsScreen}
+        name="Restaurants"
+        component={RestaurantsScreen}
         options={{
           tabBarLabel: 'Restaurants',
           tabBarIcon: ({ focused, color }) => (
