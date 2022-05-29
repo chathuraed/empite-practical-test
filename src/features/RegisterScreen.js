@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Image } from 'react-native'
+import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native'
 import Logo from '../../assets/logo.png'
 import { TextButton } from '../components/Buttons'
 import Input from '../components/Input'
@@ -7,8 +7,10 @@ import Input from '../components/Input'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import { AuthContext } from '../context/AuthContext'
-import { OutlinedButton } from '../components/Buttons/src/OutlinedButton'
-import { Spacing } from '../styles'
+import { OutlinedButton } from '../components/Buttons'
+import { FontSize, scale, Spacing } from '../styles'
+
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const RegisterScreen = ({ navigation }) => {
   const { register } = React.useContext(AuthContext)
@@ -20,7 +22,16 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <View style={styles.root}>
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back" size={scale(30)} />
+      </TouchableOpacity>
       <Image source={Logo} style={styles.logo} resizeMode="contain" />
+
+      <Text style={{ fontSize: FontSize.h3, marginVertical: Spacing.x16 }}>
+        REGISTER
+      </Text>
       <Formik
         enableReinitialize={true}
         initialValues={{
@@ -61,6 +72,10 @@ const styles = StyleSheet.create({
     height: 200,
     maxWidth: 400,
     maxHeight: 400,
+  },
+  backButton: {
+    alignSelf: 'flex-start',
+    padding: Spacing.x10,
   },
 })
 

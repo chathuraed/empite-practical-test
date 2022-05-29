@@ -5,7 +5,7 @@ import DashboardNavigation from './DashboardNavigation'
 import StackNavigation from './StackNavigation'
 
 const RootNavigation = () => {
-  const { user, loading } = React.useContext(AuthContext)
+  const { user, logout } = React.useContext(AuthContext)
 
   React.useEffect(() => {
     console.log('logged user', user)
@@ -13,7 +13,11 @@ const RootNavigation = () => {
   return (
     <>
       <NavigationContainer>
-        {user ? <DashboardNavigation /> : <StackNavigation />}
+        {user ? (
+          <DashboardNavigation user={user} logout={logout} />
+        ) : (
+          <StackNavigation />
+        )}
       </NavigationContainer>
     </>
   )

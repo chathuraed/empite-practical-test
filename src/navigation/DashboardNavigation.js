@@ -1,17 +1,17 @@
 import React from 'react'
+import { Text, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Feather from 'react-native-vector-icons/Feather'
 
 import WeatherScreen from '../features/WeatherScreen'
 import RestaurantsScreen from '../features/RestaurantsScreen'
+import { Colors, FontSize, scale, Spacing } from '../styles'
 
 const Tab = createBottomTabNavigator()
 
-const DashboardNavigation = () => {
+const DashboardNavigation = ({ user, logout }) => {
   return (
-    <Tab.Navigator
-      // screenOptions={{ headerShown: false }}
-      initialRouteName="Weather">
+    <Tab.Navigator initialRouteName="Weather">
       <Tab.Screen
         name="Weather"
         component={WeatherScreen}
@@ -19,6 +19,20 @@ const DashboardNavigation = () => {
           tabBarLabel: 'Weather',
           tabBarIcon: ({ focused, color }) => (
             <Feather name="cloud" size={25} color={color} />
+          ),
+          headerRight: () => (
+            <TouchableOpacity
+              style={{ padding: Spacing.x8 }}
+              onPress={() => logout()}>
+              <Text
+                style={{
+                  marginRight: Spacing.x8,
+                  fontWeight: '700',
+                  color: Colors.Fancy.COLOR_RED,
+                }}>
+                Signout
+              </Text>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -29,6 +43,20 @@ const DashboardNavigation = () => {
           tabBarLabel: 'Restaurants',
           tabBarIcon: ({ focused, color }) => (
             <Feather name="navigation" size={25} color={color} />
+          ),
+          headerRight: () => (
+            <TouchableOpacity
+              style={{ padding: Spacing.x8 }}
+              onPress={() => logout()}>
+              <Text
+                style={{
+                  marginRight: Spacing.x8,
+                  fontWeight: '700',
+                  color: Colors.Fancy.COLOR_RED,
+                }}>
+                Signout
+              </Text>
+            </TouchableOpacity>
           ),
         }}
       />

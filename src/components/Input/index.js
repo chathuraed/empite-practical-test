@@ -58,7 +58,6 @@ const Input = React.forwardRef(({ name, ...props }, ref) => {
         onFocus={onFocus}
         onChange={() => null}
         onChangeText={onChangeText}
-        secureTextEntry={props.type === 'password'}
       />
       {hasError && <Text style={styles.errorText}>{meta.error}</Text>}
       {/* code={{key: meta.error || '', params: {field: props.label || field.name}}} */}
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
     paddingVertical: Spacing.x2,
     marginVertical: Spacing.x10,
   },
-  input: {},
+  input: { fontSize: FontSize.caption },
   errorText: {
     fontSize: FontSize.smallLabel,
     color: 'red',
